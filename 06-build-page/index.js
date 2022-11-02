@@ -1,8 +1,6 @@
 const fs = require('fs');
 const fsPromises = require('fs/promises');
 const path = require('path');
-const pipeline = require('stream');
-
 
 create(path.join(__dirname, 'project-dist', 'assets'));
 
@@ -89,4 +87,5 @@ async function copyTemplate(){
       str = str.replace(`{{${names[i]}}}`, htmlArr[i])
     }
   }
+  output.write(str);
 }
